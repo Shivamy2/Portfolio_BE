@@ -1,8 +1,27 @@
 import { Model, Document } from "mongoose";
 
+export enum ESkills {
+  HTML = "html",
+  CSS = "css",
+  STYLING = "tailwindcss/bootstrap/materialui",
+  JS = "javascript",
+  TS = "typescript",
+  REACT = "react",
+  REACT_SIDEWAYS = "redux/thunk/saga",
+  SEO = "seo",
+  AWS = "aws lambda/serverless/sqs",
+  BE = "nodejs/expressjs",
+  GRAPHQL = "graphql",
+  DB_NO_SQL = "mongodb/mongoose",
+  DB_SQL = "postgres/sequelize",
+  HOST = "git/github",
+  TERMINAL = "terminal",
+  SPRINGBOOT = "springboot",
+  MOBILE = "flutter",
+}
 export interface IDescription {
   values: string;
-  literals: string[];
+  literals?: string[][];
 }
 
 export interface ISocialLinks {
@@ -19,7 +38,7 @@ export interface IAbout {
   title: string;
   myIntroduction: IDescription;
   knowMeDescription: IDescription;
-  skills: string[];
+  skills: ESkills[];
 }
 
 export interface IProjectDetails {
@@ -28,7 +47,7 @@ export interface IProjectDetails {
   longDescription: IDescription;
   overview: IDescription;
   points: IDescription[];
-  stackUsed: string[];
+  stackUsed: ESkills[];
   imageUrl: string;
   pocUrl: string;
   hostedUrl: string;
@@ -44,9 +63,16 @@ export interface IProjects {
 export interface IContact {
   title: string;
   introduction: IDescription;
-  email: string;
-  name: string;
-  message: string;
+  email?: string;
+  name?: string;
+  message?: string;
+}
+
+export interface ICertificates {
+  title: string;
+  description: IDescription;
+  link: string;
+  date: Date;
 }
 
 export interface IEmployeeDetails {
@@ -56,6 +82,7 @@ export interface IEmployeeDetails {
   about: IAbout;
   contact: IContact;
   projects: IProjects;
+  certification: ICertificates;
 }
 
 export interface IMaster {

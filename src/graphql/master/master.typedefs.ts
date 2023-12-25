@@ -55,6 +55,13 @@ export const typeDefs = `#graphql
         message: String
     }
   
+    type Certificates {
+        title: string;
+        description: IDescription;
+        link: string;
+        date: Date;
+    }
+
     type EmployeeDetails {
         name: String
         userCode: Int
@@ -62,6 +69,7 @@ export const typeDefs = `#graphql
         about: About
         contact: Contact
         projects: Projects
+        certification: Certificates 
     }
 
     type Master {

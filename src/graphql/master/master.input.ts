@@ -55,6 +55,13 @@ export const inputTypes = `#graphql
         message: String
     }
   
+    input Certificates {
+        title: string;
+        description: IDescription;
+        link: string;
+        date: Date;
+    }
+
     input EmployeeDetailsInput {
         name: String
         userCode: Int
@@ -62,6 +69,7 @@ export const inputTypes = `#graphql
         about: AboutInput
         contact: ContactInput
         projects: ProjectsInput
+        certification: Certificates 
     }
 
     input MasterInput {
