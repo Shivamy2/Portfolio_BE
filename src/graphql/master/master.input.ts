@@ -62,13 +62,34 @@ export const inputTypes = `#graphql
         date: Date;
     }
 
+    
+    input ExperienceDetails {
+        employerName: string;
+        employerLocation: string;
+        position: string;
+        joiningDate: Date;
+        endingData: Date | "Present";
+        overview: IDescription;
+        points: IDescription[];
+        techStackLearned: ESkills[];
+    }
+
+    input Experience {
+        title: string;
+        introduction: string;
+        companies: ExperienceDetails[];
+    }
+
+
     input EmployeeDetailsInput {
         name: String
+        dpUrl: String
         userCode: Int
         home: HomeInput
         about: AboutInput
         contact: ContactInput
         projects: ProjectsInput
+        experience: Experience
         certification: Certificates 
     }
 

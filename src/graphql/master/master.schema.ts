@@ -4,6 +4,8 @@ import {
   IContact,
   IDescription,
   IEmployeeDetails,
+  IExperience,
+  IExperienceDetails,
   IHome,
   IMaster,
   IMasterMethods,
@@ -98,8 +100,48 @@ const contactSchema = new Schema<IContact>({
   },
 });
 
+const companySchema = new Schema<IExperienceDetails>({
+  employerName: {
+    type: String,
+  },
+  employerLocation: {
+    type: String,
+  },
+  endingData: {
+    type: String,
+  },
+  joiningDate: {
+    type: Date,
+  },
+  overview: {
+    type: String,
+  },
+  points: [descriptionSchema],
+  position: {
+    type: String,
+  },
+  techStackLearned: [
+    {
+      type: String,
+    },
+  ],
+});
+
+const experienceSchema = new Schema<IExperience>({
+  title: {
+    type: String,
+  },
+  introduction: {
+    type: String,
+  },
+  companies: companySchema,
+});
+
 const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   name: {
+    type: String,
+  },
+  dpUrl: {
     type: String,
   },
   userCode: {
@@ -111,11 +153,8 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   home: {
     type: homeSchema,
   },
-  projects: [
-    {
-      type: projectSchema,
-    },
-  ],
+  projects: projectSchema,
+  experience: experienceSchema,
   contact: contactSchema,
 });
 

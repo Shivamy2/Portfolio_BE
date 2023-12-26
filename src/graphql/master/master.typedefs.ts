@@ -62,14 +62,33 @@ export const typeDefs = `#graphql
         date: Date;
     }
 
+    type ExperienceDetails {
+        employerName: string;
+        employerLocation: string;
+        position: string;
+        joiningDate: Date;
+        endingData: Date | "Present";
+        overview: IDescription;
+        points: IDescription[];
+        techStackLearned: ESkills[];
+    }
+
+    type Experience {
+        title: string;
+        introduction: string;
+        companies: ExperienceDetails[];
+    }
+
     type EmployeeDetails {
         name: String
+        dpUrl: String
         userCode: Int
         home: Home
         about: About
         contact: Contact
         projects: Projects
-        certification: Certificates 
+        experience: Experience
+        certification: Certificates
     }
 
     type Master {

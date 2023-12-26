@@ -14,10 +14,18 @@ export enum ESkills {
   GRAPHQL = "graphql",
   DB_NO_SQL = "mongodb/mongoose",
   DB_SQL = "postgres/sequelize",
+  STORYBOOK = "storybookjs",
   HOST = "git/github",
   TERMINAL = "terminal",
   SPRINGBOOT = "springboot",
   MOBILE = "flutter",
+  AZURE = "azure"
+}
+
+export enum ELiterals {
+  LINK = "l",
+  BOLD = "b",
+  ITALIC = "i",
 }
 export interface IDescription {
   values: string;
@@ -44,7 +52,7 @@ export interface IAbout {
 export interface IProjectDetails {
   title: string;
   shortDescription: IDescription;
-  longDescription: IDescription;
+  longDescription?: IDescription;
   overview: IDescription;
   points: IDescription[];
   stackUsed: ESkills[];
@@ -75,13 +83,31 @@ export interface ICertificates {
   date: Date;
 }
 
+export interface IExperienceDetails {
+  employerName: string;
+  employerLocation: string;
+  position: string;
+  joiningDate: Date;
+  endingData: Date | "Present";
+  overview: IDescription;
+  points: IDescription[];
+  techStackLearned: ESkills[];
+}
+export interface IExperience {
+  title: string;
+  introduction: string;
+  companies: IExperienceDetails[];
+}
+
 export interface IEmployeeDetails {
   name: string;
+  dpUrl: string;
   userCode: number;
   home: IHome;
   about: IAbout;
   contact: IContact;
   projects: IProjects;
+  experience: IExperience;
   certification: ICertificates;
 }
 
