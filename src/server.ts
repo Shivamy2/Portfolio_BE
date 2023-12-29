@@ -1,11 +1,10 @@
 import express, { Request, Response } from "express";
 import { expressMiddleware } from "@apollo/server/express4";
 import createGraphQlServer from "./graphql";
-import dotenv from "dotenv";
+import "dotenv/config";
 import establishMongoConnection from "./db/connection";
 
 const runServer = async () => {
-  dotenv.config();
   const app = express();
   app.use(express.json());
 
