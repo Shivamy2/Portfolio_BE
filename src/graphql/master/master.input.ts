@@ -87,6 +87,15 @@ export const inputTypes = `#graphql
         companies: [ExperienceDetailsInput]
     }
 
+    input ThemeInput {
+        primaryDark: String
+        primaryLight: String
+        onPrimary: String
+        secondaryDark: String
+        secondaryLight: String
+        onSecondary: String
+        hero: String
+    }
 
     input EmployeeDetailsInput {
         name: String
@@ -97,7 +106,8 @@ export const inputTypes = `#graphql
         contact: ContactInput
         projects: ProjectsInput
         experience: ExperienceInput
-        certification: CertificatesInput 
+        certification: CertificatesInput
+        theme: ThemeInput 
     }
 
     input MasterInput {

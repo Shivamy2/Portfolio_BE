@@ -534,6 +534,15 @@ const myData: IMaster = {
           },
         ],
       },
+      theme: {
+        primaryDark: "#EB455F",
+        primaryLight: "#FCFFE7",
+        onPrimary: "#ffffff",
+        secondaryDark: "#2B3467",
+        secondaryLight: "#BAD7E9",
+        onSecondary: "#000000",
+        hero: "https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg",
+      },
     },
   ],
 };

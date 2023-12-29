@@ -14,6 +14,7 @@ import {
   IMasterMethods,
   IProjectDetails,
   IProjects,
+  ITheme,
 } from "./master.interface";
 import { CMaster } from "./master.classes";
 
@@ -171,6 +172,30 @@ const certificateSchema = new Schema<ICertificates>({
   details: [certificateDetailsSchema],
 });
 
+const themeSchema = new Schema<ITheme>({
+  primaryDark: {
+    type: String,
+  },
+  primaryLight: {
+    type: String,
+  },
+  onPrimary: {
+    type: String,
+  },
+  secondaryDark: {
+    type: String,
+  },
+  secondaryLight: {
+    type: String,
+  },
+  onSecondary: {
+    type: String,
+  },
+  hero: {
+    type: String,
+  },
+});
+
 const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   name: {
     type: String,
@@ -180,6 +205,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   },
   userCode: {
     type: Number,
+    unique: true
   },
   about: {
     type: aboutSchema,
@@ -191,6 +217,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   experience: experienceSchema,
   contact: contactSchema,
   certification: certificateSchema,
+  theme: themeSchema,
 });
 
 const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>({

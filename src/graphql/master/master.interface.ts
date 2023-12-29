@@ -21,7 +21,7 @@ export enum ESkills {
   MOBILE = "flutter",
   AZURE = "azure",
   VALIDATIONS = "formik/react-forms/yup",
-  JAVA = "java"
+  JAVA = "java",
 }
 
 export enum ELiterals {
@@ -107,16 +107,27 @@ export interface IExperience {
   companies: IExperienceDetails[];
 }
 
+export interface ITheme {
+  primaryDark: string;
+  primaryLight: string;
+  onPrimary: string;
+  secondaryDark: string;
+  secondaryLight: string;
+  onSecondary: string;
+  hero: string;
+}
+
 export interface IEmployeeDetails {
   name: string;
   dpUrl: string;
-  userCode: number;
+  userCode: string;
   home: IHome;
   about: IAbout;
   contact: IContact;
   projects: IProjects;
   experience: IExperience;
   certification: ICertificates;
+  theme: ITheme;
 }
 
 export interface IMaster {

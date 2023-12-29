@@ -11,7 +11,7 @@ const runServer = async () => {
 
   const PORT = Number(process.env.PORT) || 8000;
 
-  app.get("/test", (_req: Request, res: Response) =>
+  app.get("/", (_req: Request, res: Response) =>
     res.json({ message: "Working" })
   );
 

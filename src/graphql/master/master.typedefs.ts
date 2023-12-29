@@ -87,6 +87,16 @@ export const typeDefs = `#graphql
         companies: [ExperienceDetails]
     }
 
+    type Theme {
+        primaryDark: String
+        primaryLight: String
+        onPrimary: String
+        secondaryDark: String
+        secondaryLight: String
+        onSecondary: String
+        hero: String
+    }
+
     type EmployeeDetails {
         name: String
         dpUrl: String
@@ -97,6 +107,7 @@ export const typeDefs = `#graphql
         projects: Projects
         experience: Experience
         certification: Certificates
+        theme: Theme
     }
 
     type Master {
