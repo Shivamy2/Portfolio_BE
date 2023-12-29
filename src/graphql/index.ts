@@ -45,6 +45,7 @@ const createGraphQlServer = async () => {
         };
       return formattedError;
     },
+    introspection: true,
   });
 
   // start gql server
