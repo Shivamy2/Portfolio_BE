@@ -3,10 +3,12 @@ import { expressMiddleware } from "@apollo/server/express4";
 import createGraphQlServer from "./graphql";
 import "dotenv/config";
 import establishMongoConnection from "./db/connection";
+import cors from "cors";
 
 const runServer = async () => {
   const app = express();
   app.use(express.json());
+  app.use(cors());
 
   const PORT = Number(process.env.PORT) || 8000;
 
