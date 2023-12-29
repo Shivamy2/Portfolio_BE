@@ -1,8 +1,8 @@
 export const typeDefs = `#graphql
     type Description {
         values: String
-        literals: [String]
-    }  
+        literals: [[String]]
+    }
 
     type SocialLinks {
         github: String
@@ -54,29 +54,37 @@ export const typeDefs = `#graphql
         name: String
         message: String
     }
+
+    type CertificateDetails {
+        name: String
+        overview: Description
+        link: String
+        date: String
+        skills: [String]
+    }
   
     type Certificates {
-        title: string;
-        description: IDescription;
-        link: string;
-        date: Date;
+        title: String
+        description: Description
+        details: [CertificateDetails]
     }
 
     type ExperienceDetails {
-        employerName: string;
-        employerLocation: string;
-        position: string;
-        joiningDate: Date;
-        endingData: Date | "Present";
-        overview: IDescription;
-        points: IDescription[];
-        techStackLearned: ESkills[];
+        employerName: String
+        employerLocation: String
+        position: String
+        joiningDate: String
+        endingDate: String
+        overview: Description
+        points: [Description]
+        techStackLearned: [String]
     }
 
     type Experience {
-        title: string;
-        introduction: string;
-        companies: ExperienceDetails[];
+        title: String
+        introduction: String
+        totalExperience: String
+        companies: [ExperienceDetails]
     }
 
     type EmployeeDetails {
@@ -95,5 +103,10 @@ export const typeDefs = `#graphql
         _id: ID!
         headerOptions: [String]
         details: [EmployeeDetails]
+    }
+
+    type SkillProjects {
+        personal: [ProjectDetails]
+        professional: [ProjectDetails]
     }
 `;

@@ -1,17 +1,21 @@
 import { Model, Schema, connection, Document } from "mongoose";
 import {
   IAbout,
+  ICertificateDetails,
+  ICertificates,
   IContact,
   IDescription,
   IEmployeeDetails,
   IExperience,
   IExperienceDetails,
   IHome,
+  // ILiterals,
   IMaster,
   IMasterMethods,
   IProjectDetails,
   IProjects,
 } from "./master.interface";
+import { CMaster } from "./master.classes";
 
 type MasterModel = Model<IMaster, {}, IMasterMethods>;
 
@@ -20,9 +24,11 @@ const descriptionSchema = new Schema<IDescription>({
     type: String,
   },
   literals: [
-    {
-      type: String,
-    },
+    [
+      {
+        type: String,
+      },
+    ],
   ],
 });
 
@@ -100,6 +106,18 @@ const contactSchema = new Schema<IContact>({
   },
 });
 
+// const literalsSchema = new Schema<ILiterals>({
+//   label: {
+//     type: String,
+//   },
+//   value: {
+//     type: String,
+//   },
+//   link: {
+//     type: String,
+//   },
+// });
+
 const companySchema = new Schema<IExperienceDetails>({
   employerName: {
     type: String,
@@ -107,24 +125,18 @@ const companySchema = new Schema<IExperienceDetails>({
   employerLocation: {
     type: String,
   },
-  endingData: {
+  endingDate: {
     type: String,
   },
   joiningDate: {
     type: Date,
   },
-  overview: {
-    type: String,
-  },
+  overview: descriptionSchema,
   points: [descriptionSchema],
   position: {
     type: String,
   },
-  techStackLearned: [
-    {
-      type: String,
-    },
-  ],
+  techStackLearned: [{ type: String }],
 });
 
 const experienceSchema = new Schema<IExperience>({
@@ -134,7 +146,29 @@ const experienceSchema = new Schema<IExperience>({
   introduction: {
     type: String,
   },
-  companies: companySchema,
+  companies: [companySchema],
+});
+
+const certificateDetailsSchema = new Schema<ICertificateDetails>({
+  name: {
+    type: String,
+  },
+  overview: descriptionSchema,
+  date: {
+    type: Date,
+  },
+  link: {
+    type: String,
+  },
+  skills: [{ type: String }],
+});
+
+const certificateSchema = new Schema<ICertificates>({
+  title: {
+    type: String,
+  },
+  shortDescription: descriptionSchema,
+  details: [certificateDetailsSchema],
 });
 
 const employeeDetailsSchema = new Schema<IEmployeeDetails>({
@@ -156,6 +190,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   projects: projectSchema,
   experience: experienceSchema,
   contact: contactSchema,
+  certification: certificateSchema,
 });
 
 const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>({
@@ -171,11 +206,10 @@ const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>({
   ],
 });
 
-masterSchema.statics.findByCode = async (code: number) => {
-  const data = await Master.find({ "details.userCode": code });
-  console.log("Entered into findbycode", data);
-  return data;
-};
+masterSchema.loadClass(CMaster);
+
+masterSchema.statics.findByCode = async (code: number) =>
+  await Master.find({ "details.userCode": code });
 
 export const Master = connection.model<IMaster, IMasterMethods>(
   "ruleEngine",

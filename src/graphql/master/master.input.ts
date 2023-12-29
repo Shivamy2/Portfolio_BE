@@ -1,8 +1,8 @@
 export const inputTypes = `#graphql
     input DescriptionInput {
         values: String
-        literals: [String]
-    }  
+        literals: [[String]]
+    }
 
     input SocialLinksInput {
         github: String!
@@ -54,30 +54,37 @@ export const inputTypes = `#graphql
         name: String
         message: String
     }
+
+    input CertificateDetailsInput {
+        name: String
+        overview: DescriptionInput
+        link: String
+        date: String
+        skills: [String]
+    }
   
-    input Certificates {
-        title: string;
-        description: IDescription;
-        link: string;
-        date: Date;
+    input CertificatesInput {
+        title: String
+        description: DescriptionInput
+        details: [CertificateDetailsInput]
     }
-
     
-    input ExperienceDetails {
-        employerName: string;
-        employerLocation: string;
-        position: string;
-        joiningDate: Date;
-        endingData: Date | "Present";
-        overview: IDescription;
-        points: IDescription[];
-        techStackLearned: ESkills[];
+    input ExperienceDetailsInput {
+        employerName: String
+        employerLocation: String
+        position: String
+        joiningDate: String
+        endingDate: String
+        overview: DescriptionInput
+        points: [DescriptionInput]
+        techStackLearned: [String]
     }
 
-    input Experience {
-        title: string;
-        introduction: string;
-        companies: ExperienceDetails[];
+    input ExperienceInput {
+        title: String
+        introduction: String
+        totalExperience: String
+        companies: [ExperienceDetailsInput]
     }
 
 
@@ -89,12 +96,23 @@ export const inputTypes = `#graphql
         about: AboutInput
         contact: ContactInput
         projects: ProjectsInput
-        experience: Experience
-        certification: Certificates 
+        experience: ExperienceInput
+        certification: CertificatesInput 
     }
 
     input MasterInput {
         headerOptions: [String]
         details: [EmployeeDetailsInput]
+    }
+
+    input GetProjectBySkillInput {
+        code: Int!
+        skill: String!
+    }
+
+    input GetProjectInput {
+        id: ID!
+        code: Int!
+        type: String!
     }
 `;

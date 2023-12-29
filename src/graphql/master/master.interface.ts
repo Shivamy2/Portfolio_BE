@@ -19,7 +19,9 @@ export enum ESkills {
   TERMINAL = "terminal",
   SPRINGBOOT = "springboot",
   MOBILE = "flutter",
-  AZURE = "azure"
+  AZURE = "azure",
+  VALIDATIONS = "formik/react-forms/yup",
+  JAVA = "java"
 }
 
 export enum ELiterals {
@@ -76,11 +78,17 @@ export interface IContact {
   message?: string;
 }
 
-export interface ICertificates {
-  title: string;
-  description: IDescription;
+export interface ICertificateDetails {
+  name: string;
+  overview: IDescription;
   link: string;
   date: Date;
+  skills: ESkills[];
+}
+export interface ICertificates {
+  title: string;
+  shortDescription: IDescription;
+  details: ICertificateDetails[];
 }
 
 export interface IExperienceDetails {
@@ -88,7 +96,7 @@ export interface IExperienceDetails {
   employerLocation: string;
   position: string;
   joiningDate: Date;
-  endingData: Date | "Present";
+  endingDate: Date | "Present";
   overview: IDescription;
   points: IDescription[];
   techStackLearned: ESkills[];

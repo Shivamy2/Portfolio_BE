@@ -1,6 +1,6 @@
 import { ELiterals, ESkills, IMaster } from "./graphql/master/master.interface";
 
-const obj: IMaster = {
+const myData: IMaster = {
   headerOptions: ["home", "about", "projects", "contact"],
   details: [
     {
@@ -45,6 +45,7 @@ const obj: IMaster = {
           ESkills.TS,
           ESkills.REACT,
           ESkills.REACT_SIDEWAYS,
+          ESkills.VALIDATIONS,
           ESkills.STORYBOOK,
           ESkills.SEO,
           ESkills.AWS,
@@ -57,6 +58,7 @@ const obj: IMaster = {
           ESkills.TERMINAL,
           ESkills.SPRINGBOOT,
           ESkills.MOBILE,
+          ESkills.JAVA,
         ],
       },
       projects: {
@@ -116,7 +118,13 @@ const obj: IMaster = {
               {
                 values:
                   "I made this website open-source, so if any of the developers have a great suggestion to add a section or any improvement, I am ready to take it. Feel free to checkout $1",
-                literals: [[ELiterals.LINK, "here"]],
+                literals: [
+                  [
+                    ELiterals.LINK,
+                    "here",
+                    "https://github.com/Shivamy2/Portfolio_FE|https://github.com/Shivamy2/Portfolio_BE",
+                  ],
+                ],
               },
             ],
           },
@@ -141,6 +149,7 @@ const obj: IMaster = {
               ESkills.JS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
+              ESkills.VALIDATIONS,
               ESkills.STORYBOOK,
               ESkills.DB_SQL,
               ESkills.STYLING,
@@ -192,7 +201,6 @@ const obj: IMaster = {
               ESkills.DB_SQL,
               ESkills.STYLING,
               ESkills.HOST,
-              ESkills.SPRINGBOOT,
             ],
             hostedUrl: "",
             imageUrl: "",
@@ -231,12 +239,84 @@ const obj: IMaster = {
         ],
         professionalProjectsDetails: [
           {
+            title: "AFLI: Ageas Federal Life Insurance",
+            overview: {
+              values:
+                "This is a client project which we started from $1. This is a $2 product which offers Insurance to the people who opt for home loans. \n $3",
+              literals: [
+                [ELiterals.BOLD, "Scratch"],
+                [ELiterals.BOLD, "BANCA"],
+                [ELiterals.ITALIC, "I was a shadow resource here."],
+              ],
+            },
+            shortDescription: {
+              values:
+                "This page contains the case study of AFLI which includes the Project Overview, Tools Used and Live Links to the official product.",
+            },
+            stackUsed: [
+              ESkills.AZURE,
+              ESkills.BE,
+              ESkills.HTML,
+              ESkills.CSS,
+              ESkills.STYLING,
+              ESkills.TS,
+              ESkills.JS,
+              ESkills.REACT,
+              ESkills.REACT_SIDEWAYS,
+              ESkills.VALIDATIONS,
+              ESkills.DB_SQL,
+            ],
+            hostedUrl: "https://creditlifeconnectuat.ageasfederal.com",
+            imageUrl: "",
+            pocUrl: "",
+            longDescription: {
+              values:
+                "$1 is one of India's prominent life insurance companies that strives towards creating value for its stakeholders. We are a $2 based out of Europe and Federal Bank, one of India's leading private sector banks. $3",
+              literals: [
+                [ELiterals.BOLD, "Ageas Federal Life Insurance (AFLI)"],
+                [
+                  ELiterals.ITALIC,
+                  "joint venture between Ageas, an international insurance giant",
+                ],
+                [ELiterals.BOLD, "I am a billing resource here"],
+              ],
+            },
+            points: [
+              {
+                values:
+                  "$4 We made this project(Front-end + Back-end) from $1. For efficiency in this $2 we used memoization, tanstack-query for $3 (on FE). Integrated SSO Login through $5.",
+                literals: [
+                  [ELiterals.BOLD, "Scratch"],
+                  [ELiterals.ITALIC, "Single Page Application"],
+                  [ELiterals.ITALIC, "optimising API calls"],
+                  [ELiterals.BOLD, "Front-End:"],
+                  [ELiterals.ITALIC, "Azure Authentication"],
+                ],
+              },
+              {
+                values:
+                  "We are using $1 for theming and better access in writing CSS code without having massive load of chunks/bundle. Also using, $2 for accessing global reducer variables within the App.",
+                literals: [
+                  [ELiterals.BOLD, "Materal UI with TailwindCSS"],
+                  [ELiterals.ITALIC, "Redux with Thunk"],
+                ],
+              },
+              {
+                values:
+                  "$1 I'm also working with BE Team for making $2, filter & search functionality, debugging the code, etc.",
+                literals: [
+                  [ELiterals.BOLD, "Back-end:"],
+                  [ELiterals.BOLD, "Master APIs"],
+                ],
+              },
+            ],
+          },
+          {
             title: "TATA AIG",
             overview: {
               values:
-                "This is a client project and the client is $1. An insurace website which has more than 20 products including $2, etc. \n $3",
+                "This is a client project which is already deployed. An insurace website which has more than 20 products including $1, etc. \n $2",
               literals: [
-                [ELiterals.BOLD, "TATA"],
                 [
                   ELiterals.BOLD,
                   "health, travel, motor, marine, renewal of products",
@@ -258,8 +338,8 @@ const obj: IMaster = {
               ESkills.JS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
+              ESkills.VALIDATIONS,
               ESkills.DB_NO_SQL,
-              ESkills.REACT_SIDEWAYS,
             ],
             hostedUrl: "https://www.tataaig.com/",
             imageUrl: "",
@@ -313,37 +393,149 @@ const obj: IMaster = {
         title: "Contact",
         introduction: {
           values:
-            "Feel free to Contact me by submitting the form below and I will get back to you as soon as possible",
+            "Feel free to Contact me by submitting the form below and I will get back to you as soon as possible, you can also schedule a meeting with me.",
         },
       },
       experience: {
-        title: "",
-        introduction: "",
+        title: "Experience",
+        introduction:
+          "Here you will find the companies/employer I have worked with. Including Internships/Trainings/Full-Time",
         companies: [
           {
             overview: {
-              values: "",
+              values:
+                "Gemini Solutions is a $1 which majorly focus on their client based products. Although, they also started making their own products such as MIS, Athena, Helpdesk, etc. They offer products, services, consulting, etc.",
+              literals: [[ELiterals.BOLD, "service-based startup company"]],
             },
-            employerName: "",
-            employerLocation: "",
-            joiningDate: new Date(),
-            endingData: "Present",
-            position: "",
-            techStackLearned: [ESkills.HTML],
-            points: [{ values: "" }],
+            employerName: "Gemini Solutions",
+            employerLocation: "Gurugram",
+            joiningDate: new Date("04/04/2022"),
+            endingDate: "Present",
+            position: "Software Development Engineer L1",
+            techStackLearned: [
+              ESkills.HTML,
+              ESkills.CSS,
+              ESkills.STYLING,
+              ESkills.JS,
+              ESkills.TS,
+              ESkills.REACT,
+              ESkills.REACT_SIDEWAYS,
+              ESkills.VALIDATIONS,
+              ESkills.AWS,
+              ESkills.BE,
+              ESkills.DB_NO_SQL,
+              ESkills.DB_SQL,
+              ESkills.AZURE,
+              ESkills.HOST,
+            ],
+            points: [
+              {
+                values:
+                  "I joined as a trainee into the Gemini Solutions. After 1.2 years of training and intership on a certain projects and assignment, I was promoted for Full-time employment. Worked with software development and testing team members to $1 to meet client requirements for $2",
+                literals: [
+                  [ELiterals.BOLD, "design and develop robust solutions"],
+                  [
+                    ELiterals.ITALIC,
+                    "functionality, scalability, and performance",
+                  ],
+                ],
+              },
+              {
+                values:
+                  "I worked with Front-end as well as Back-end team for the products which were under development and made from scratch. I contributed in optimising code and server cost. I helped my colleagues and took help whenever required.",
+              },
+              {
+                values:
+                  "Mainly worked with Insurance and BANCA projects, and understood various conditional aspects, corner cases. Reviewed project specifications and designed technology solutions that met or exceeded performance expectations",
+              },
+            ],
+          },
+          {
+            overview: {
+              values:
+                "Devslane is a fully service-based startup company which majorly rely on their client-based projects. They have $1 which mainly focuses on a quality products.",
+              literals: [[ELiterals.BOLD, "US clients"]],
+            },
+            employerName: "Devslane",
+            employerLocation: "Ghaziabad",
+            joiningDate: new Date("01/06/2021"),
+            endingDate: new Date("31/10/2021"),
+            position: "Software Developer Intern",
+            techStackLearned: [
+              ESkills.HTML,
+              ESkills.CSS,
+              ESkills.STYLING,
+              ESkills.JS,
+              ESkills.TS,
+              ESkills.REACT,
+              ESkills.REACT_SIDEWAYS,
+              ESkills.VALIDATIONS,
+              ESkills.AWS,
+              ESkills.BE,
+              ESkills.DB_NO_SQL,
+              ESkills.DB_SQL,
+              ESkills.AZURE,
+              ESkills.HOST,
+            ],
+            points: [
+              {
+                values:
+                  "Supported development, QA and user experience staff to develop new products. Learned $1 improvements and best practices.",
+                literals: [[ELiterals.BOLD, "software engineering process"]],
+              },
+              {
+                values:
+                  "Developed Training Management project using $1. Worked with the design team and planning meetings. $2 by resolving issues for optimal results",
+                literals: [
+                  [ELiterals.ITALIC, "ReactTS, Redux Saga HTML/TailwindCSS"],
+                  [ELiterals.BOLD, "Contributed to deployments"],
+                ],
+              },
+            ],
           },
         ],
       },
       certification: {
-        title: "",
-        description: {
-          values: "",
+        title: "Certificates",
+        shortDescription: {
+          values:
+            "Here you will find the certificates which I earned during my college and corporate journey.",
         },
-        link: "",
-        date: new Date(),
+        details: [
+          {
+            name: "AWS Serverless APIs & Apps",
+            overview: {
+              values:
+                "I learnt Serverless approach of writing BE using NodeJS. Made POCs and micro-service based Lambda",
+            },
+            date: new Date("01/01/2023"),
+            link: "https://www.udemy.com/certificate/UC-54dda4c6-b2bb-4bb5-b19b-4c41ae83614d/",
+            skills: [ESkills.AWS, ESkills.BE],
+          },
+          {
+            name: "React",
+            overview: {
+              values:
+                "I learnt React, Redux using JavaScript. Made POCs and assignments which helped me to understand the architecture of React.",
+            },
+            date: new Date("01/10/2021"),
+            link: "https://www.hackerrank.com/certificates/6fadf6da7be4",
+            skills: [ESkills.REACT, ESkills.REACT_SIDEWAYS],
+          },
+          {
+            name: "Java",
+            overview: {
+              values:
+                "I learnt Java for SpringBoot framework which enables muti-threading. Made POCs and assignments which helped me to understand the logic better.",
+            },
+            date: new Date("01/02/2021"),
+            link: "https://www.hackerrank.com/certificates/2d4b4da923d2",
+            skills: [ESkills.JAVA, ESkills.SPRINGBOOT],
+          },
+        ],
       },
     },
   ],
 };
 
-export default obj;
+export default myData;
