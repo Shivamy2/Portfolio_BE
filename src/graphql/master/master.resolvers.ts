@@ -8,43 +8,6 @@ export const queries = {
 
   getCurrectEmployeeData: async (_parent: any, payload: Record<string, any>) =>
     await Master.findByCode(payload.code),
-};
-
-export const mutations = {
-  employeePortfolioEntry: async (_parent: any, payload: { input: IMaster }) => {
-    const result = new Master(payload.input);
-    return await result.save();
-  },
-
-  updateEmployeePortfolio: async (
-    _parent: any,
-    payload: Record<string, any>
-  ) => {
-    const result = await Master.findOneAndUpdate(
-      {
-        "details.userCode": payload.code,
-      },
-      { $set: payload.input }
-    );
-    console.log("updated result", result);
-    return "Successfully Updated!";
-  },
-
-  deleteEmployeePortfolio: async (
-    _parent: any,
-    payload: Record<string, any>
-  ) => {
-    const result = await Master.deleteOne({
-      "details.userCode": payload.code,
-    });
-    if (result.deletedCount) return "Successfully deleted!";
-    return "Not found";
-  },
-
-  insertEmployeeData: async () => {
-    await Master.create(myData);
-    return "Successfully Inserted!";
-  },
 
   getProjectsBySkill: async (_parent: any, payload: Record<string, any>) => {
     const personalProjectData = await Master.aggregate([
@@ -214,5 +177,42 @@ export const mutations = {
     const projects = await Master.aggregate(aggregateString);
     console.dir(projects[0]?.projects[0], { depth: null });
     return projects[0]?.projects[0];
+  },
+};
+
+export const mutations = {
+  employeePortfolioEntry: async (_parent: any, payload: { input: IMaster }) => {
+    const result = new Master(payload.input);
+    return await result.save();
+  },
+
+  updateEmployeePortfolio: async (
+    _parent: any,
+    payload: Record<string, any>
+  ) => {
+    const result = await Master.findOneAndUpdate(
+      {
+        "details.userCode": payload.code,
+      },
+      { $set: payload.input }
+    );
+    console.log("updated result", result);
+    return "Successfully Updated!";
+  },
+
+  deleteEmployeePortfolio: async (
+    _parent: any,
+    payload: Record<string, any>
+  ) => {
+    const result = await Master.deleteOne({
+      "details.userCode": payload.code,
+    });
+    if (result.deletedCount) return "Successfully deleted!";
+    return "Not found";
+  },
+
+  insertEmployeeData: async () => {
+    await Master.create(myData);
+    return "Successfully Inserted!";
   },
 };

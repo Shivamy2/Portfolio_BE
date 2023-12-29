@@ -1,8 +1,6 @@
 export const mutations = `#graphql
     employeePortfolioEntry(input: MasterInput!): Master!
-    updateEmployeePortfolio(code: Int!, input: MasterInput!): String!
-    deleteEmployeePortfolio(code: Int!): String!
+    updateEmployeePortfolio(code: String!, input: MasterInput!): String!
+    deleteEmployeePortfolio(code: String!): String!
     insertEmployeeData: String!
-    getProjectsBySkill(input: GetProjectBySkillInput!): SkillProjects!
-    getProjects(input: GetProjectInput!): ProjectDetails!
 `;

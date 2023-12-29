@@ -100,7 +100,7 @@ export const inputTypes = `#graphql
     input EmployeeDetailsInput {
         name: String
         dpUrl: String
-        userCode: Int
+        userCode: String
         home: HomeInput
         about: AboutInput
         contact: ContactInput
@@ -116,13 +116,13 @@ export const inputTypes = `#graphql
     }
 
     input GetProjectBySkillInput {
-        code: Int!
+        code: String!
         skill: String!
     }
 
     input GetProjectInput {
         id: ID!
-        code: Int!
+        code: String!
         type: String!
     }
 `;

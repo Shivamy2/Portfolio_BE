@@ -204,7 +204,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
     type: String,
   },
   userCode: {
-    type: Number,
+    type: String,
     unique: true
   },
   about: {

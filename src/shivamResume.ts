@@ -4,7 +4,7 @@ const myData: IMaster = {
   headerOptions: ["home", "about", "projects", "contact"],
   details: [
     {
-      userCode: 2312,
+      userCode: "2312",
       name: "Shivam Yadav",
       dpUrl: "https://i.ibb.co/nrjdfGM/passport-Pic.jpg",
       home: {
