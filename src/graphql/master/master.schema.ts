@@ -205,7 +205,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   },
   userCode: {
     type: String,
-    unique: true
+    unique: true,
   },
   about: {
     type: aboutSchema,
@@ -235,7 +235,7 @@ const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>({
 
 masterSchema.loadClass(CMaster);
 
-masterSchema.statics.findByCode = async (code: number) =>
+masterSchema.statics.findByCode = async (code: string) =>
   await Master.find({ "details.userCode": code });
 
 export const Master = connection.model<IMaster, IMasterMethods>(
