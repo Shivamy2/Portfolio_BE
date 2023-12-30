@@ -6,9 +6,13 @@ import { Master } from "./master.schema";
 export const queries = {
   getAllData: async () => await Master.find(),
 
-  getCurrectEmployeeData: async (_parent: any, payload: Record<string, any>) =>
-    await Master.findByCode(payload.code),
-
+  getCurrectEmployeeData: async (
+    _parent: any,
+    payload: Record<string, any>
+  ) => {
+    const result = await Master.findByCode(payload.code);
+    console.log("Current Employee", result);
+  },
   getProjectsBySkill: async (_parent: any, payload: Record<string, any>) => {
     const personalProjectData = await Master.aggregate([
       {
@@ -106,6 +110,8 @@ export const queries = {
         },
       },
     ]);
+    console.log("Personal Project Details", personalProjectData);
+    console.log("Prfessional Project Details", professionalProjectData);
     return {
       personal: personalProjectData[0]?.personalProjects,
       professional: professionalProjectData[0]?.professionalProjects,
@@ -175,7 +181,7 @@ export const queries = {
       },
     ];
     const projects = await Master.aggregate(aggregateString);
-    console.dir(projects[0]?.projects[0], { depth: null });
+    console.log("Single Project Details", projects[0]?.projects[0]);
     return projects[0]?.projects[0];
   },
 };
@@ -196,7 +202,7 @@ export const mutations = {
       },
       { $set: payload.input }
     );
-    console.log("updated result", result);
+    console.log("Updated Result", result);
     return "Successfully Updated!";
   },
 
