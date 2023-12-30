@@ -119,6 +119,7 @@ export interface ITheme {
 
 export interface IEmployeeDetails {
   name: string;
+  introduction: IDescription;
   dpUrl: string;
   userCode: string;
   home: IHome;
@@ -136,5 +137,5 @@ export interface IMaster {
 }
 
 export interface IMasterMethods extends Model<Document> {
-  findByCode(code: number): () => void;
+  findByCode(code: string): () => void;
 }

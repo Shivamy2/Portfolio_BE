@@ -6,6 +6,10 @@ const myData: IMaster = {
     {
       userCode: "2312",
       name: "Shivam Yadav",
+      introduction: {
+        values:
+          "A Full-Stack focused Wed Developer proficient in both frontend and backend languages and frameworks, as well as in server, network and hosting environments",
+      },
       dpUrl: "https://i.ibb.co/nrjdfGM/passport-Pic.jpg",
       home: {
         typewriterText: "hey, i'm shivam yadav",

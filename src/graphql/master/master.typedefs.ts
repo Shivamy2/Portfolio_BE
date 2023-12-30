@@ -99,6 +99,7 @@ export const typeDefs = `#graphql
 
     type EmployeeDetails {
         name: String
+        introduction: Description
         dpUrl: String
         userCode: String
         home: Home

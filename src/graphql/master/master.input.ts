@@ -99,6 +99,7 @@ export const inputTypes = `#graphql
 
     input EmployeeDetailsInput {
         name: String
+        introduction: DescriptionInput
         dpUrl: String
         userCode: String
         home: HomeInput

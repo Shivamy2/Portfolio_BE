@@ -200,6 +200,7 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   name: {
     type: String,
   },
+  introduction: descriptionSchema,
   dpUrl: {
     type: String,
   },
