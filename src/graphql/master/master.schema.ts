@@ -156,7 +156,7 @@ const certificateDetailsSchema = new Schema<ICertificateDetails>({
   },
   overview: descriptionSchema,
   date: {
-    type: Date,
+    type: String,
   },
   link: {
     type: String,

@@ -512,7 +512,7 @@ const myData: IMaster = {
               values:
                 "I learnt Serverless approach of writing BE using NodeJS. Made POCs and micro-service based Lambda",
             },
-            date: new Date("01/01/2023"),
+            date: new Date("01/01/2023").toString(),
             link: "https://www.udemy.com/certificate/UC-54dda4c6-b2bb-4bb5-b19b-4c41ae83614d/",
             skills: [ESkills.AWS, ESkills.BE],
           },
@@ -522,7 +522,7 @@ const myData: IMaster = {
               values:
                 "I learnt React, Redux using JavaScript. Made POCs and assignments which helped me to understand the architecture of React.",
             },
-            date: new Date("01/10/2021"),
+            date: new Date("01/10/2021").toString(),
             link: "https://www.hackerrank.com/certificates/6fadf6da7be4",
             skills: [ESkills.REACT, ESkills.REACT_SIDEWAYS],
           },
@@ -532,7 +532,7 @@ const myData: IMaster = {
               values:
                 "I learnt Java for SpringBoot framework which enables muti-threading. Made POCs and assignments which helped me to understand the logic better.",
             },
-            date: new Date("01/02/2021"),
+            date: new Date("01/02/2021").toString(),
             link: "https://www.hackerrank.com/certificates/2d4b4da923d2",
             skills: [ESkills.JAVA, ESkills.SPRINGBOOT],
           },

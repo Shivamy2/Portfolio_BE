@@ -82,7 +82,7 @@ export interface ICertificateDetails {
   name: string;
   overview: IDescription;
   link: string;
-  date: Date;
+  date: string;
   skills: ESkills[];
 }
 export interface ICertificates {
