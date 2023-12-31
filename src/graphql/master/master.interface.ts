@@ -95,8 +95,8 @@ export interface IExperienceDetails {
   employerName: string;
   employerLocation: string;
   position: string;
-  joiningDate: Date;
-  endingDate: Date | "Present";
+  joiningDate: string;
+  endingDate: string;
   overview: IDescription;
   points: IDescription[];
   techStackLearned: ESkills[];

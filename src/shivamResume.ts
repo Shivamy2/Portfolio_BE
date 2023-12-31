@@ -66,7 +66,7 @@ const myData: IMaster = {
         ],
       },
       projects: {
-        title: "Project",
+        title: "Projects",
         introduction: {
           values:
             "Here you will find some of the personal and clients projects that I created with each project containing its own case study",
@@ -413,7 +413,7 @@ const myData: IMaster = {
             },
             employerName: "Gemini Solutions",
             employerLocation: "Gurugram",
-            joiningDate: new Date("04/04/2022"),
+            joiningDate: new Date("04/04/2022").toString(),
             endingDate: "Present",
             position: "Software Development Engineer L1",
             techStackLearned: [
@@ -462,8 +462,8 @@ const myData: IMaster = {
             },
             employerName: "Devslane",
             employerLocation: "Ghaziabad",
-            joiningDate: new Date("01/06/2021"),
-            endingDate: new Date("31/10/2021"),
+            joiningDate: new Date("01/06/2021").toString(),
+            endingDate: new Date("31/10/2021").toString(),
             position: "Software Developer Intern",
             techStackLearned: [
               ESkills.HTML,

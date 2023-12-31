@@ -130,7 +130,7 @@ const companySchema = new Schema<IExperienceDetails>({
     type: String,
   },
   joiningDate: {
-    type: Date,
+    type: String,
   },
   overview: descriptionSchema,
   points: [descriptionSchema],
