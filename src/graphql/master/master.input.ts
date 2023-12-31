@@ -65,7 +65,7 @@ export const inputTypes = `#graphql
   
     input CertificatesInput {
         title: String
-        description: DescriptionInput
+        shortDescription: DescriptionInput
         details: [CertificateDetailsInput]
     }
     

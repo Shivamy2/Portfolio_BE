@@ -65,7 +65,7 @@ export const typeDefs = `#graphql
   
     type Certificates {
         title: String
-        description: Description
+        shortDescription: Description
         details: [CertificateDetails]
     }
 
