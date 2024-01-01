@@ -38,6 +38,7 @@ export const typeDefs = `#graphql
         imageUrl: String
         pocUrl: String
         hostedUrl: String
+        _id: ID
     }
 
     type Projects {
