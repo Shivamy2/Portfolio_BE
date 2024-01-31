@@ -99,8 +99,11 @@ export const inputTypes = `#graphql
 
     input EmployeeDetailsInput {
         name: String
+        email: String
+        mobile: String
         introduction: DescriptionInput
         dpUrl: String
+        resumeLink: String
         userCode: String
         home: HomeInput
         about: AboutInput
@@ -125,5 +128,11 @@ export const inputTypes = `#graphql
         id: ID!
         code: String!
         type: String!
+    }
+
+    input SendChatRequest {
+        name: String!
+        email: String!
+        message: String!
     }
 `;

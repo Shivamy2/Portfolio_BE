@@ -1,28 +1,35 @@
 import { ApolloServer } from "@apollo/server";
 import { ApolloServerErrorCode } from "@apollo/server/errors";
 import { User } from "./master";
+import { Chat } from "./chat";
 
 const createGraphQlServer = async () => {
   const graphQlServer = new ApolloServer({
     typeDefs: [
       `
             ${User.typeDefs}
+            ${Chat.typeDefs}
             type Query {
                 ${User.queries}
+                ${Chat.queries}
             }
 
             ${User.inputTypes}
+            ${Chat.inputTypes}
             type Mutation {
                 ${User.mutations}
+                ${Chat.mutations}
             }
         `,
     ],
     resolvers: {
       Query: {
         ...User.resolvers.queries,
+        ...Chat.resolvers.queries,
       },
       Mutation: {
         ...User.resolvers.mutations,
+        ...Chat.resolvers.mutations,
       },
     },
     formatError: (formattedError, _error) => {
@@ -45,7 +52,7 @@ const createGraphQlServer = async () => {
         };
       return formattedError;
     },
-    introspection: true
+    introspection: true,
   });
 
   // start gql server

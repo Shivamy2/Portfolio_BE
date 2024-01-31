@@ -3,24 +3,25 @@ import { Model, Document } from "mongoose";
 export enum ESkills {
   HTML = "html",
   CSS = "css",
-  STYLING = "tailwindcss/bootstrap/materialui",
+  STYLING = "tailwindcss",
+  MATERIALUI = "materialUI",
   JS = "javascript",
   TS = "typescript",
   REACT = "react",
-  REACT_SIDEWAYS = "redux/thunk/saga",
+  REACT_SIDEWAYS = "redux",
+  SAGA = "thunk/saga",
   SEO = "seo",
-  AWS = "aws lambda/serverless/sqs",
-  BE = "nodejs/expressjs",
+  AWS = "serverless",
+  BE = "nodejs",
   GRAPHQL = "graphql",
-  DB_NO_SQL = "mongodb/mongoose",
-  DB_SQL = "postgres/sequelize",
+  DB_NO_SQL = "mongodb",
+  DB_SQL = "postgres",
   STORYBOOK = "storybookjs",
   HOST = "git/github",
   TERMINAL = "terminal",
   SPRINGBOOT = "springboot",
   MOBILE = "flutter",
   AZURE = "azure",
-  VALIDATIONS = "formik/react-forms/yup",
   JAVA = "java",
 }
 
@@ -119,6 +120,9 @@ export interface ITheme {
 
 export interface IEmployeeDetails {
   name: string;
+  email: string;
+  mobile: string;
+  resumeLink: string;
   introduction: IDescription;
   dpUrl: string;
   userCode: string;

@@ -200,6 +200,9 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   name: {
     type: String,
   },
+  email: String,
+  mobile: String,
+  resumeLink: String,
   introduction: descriptionSchema,
   dpUrl: {
     type: String,
@@ -221,18 +224,23 @@ const employeeDetailsSchema = new Schema<IEmployeeDetails>({
   theme: themeSchema,
 });
 
-const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>({
-  headerOptions: [
-    {
-      type: String,
-    },
-  ],
-  details: [
-    {
-      type: employeeDetailsSchema,
-    },
-  ],
-});
+const masterSchema = new Schema<IMaster, MasterModel, IMasterMethods>(
+  {
+    headerOptions: [
+      {
+        type: String,
+      },
+    ],
+    details: [
+      {
+        type: employeeDetailsSchema,
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
 
 masterSchema.loadClass(CMaster);
 

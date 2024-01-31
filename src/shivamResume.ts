@@ -4,8 +4,12 @@ const myData: IMaster = {
   headerOptions: ["home", "about", "projects", "contact"],
   details: [
     {
-      userCode: "2312",
+      // userCode: "shivamyadav02.netlify.app",
+      userCode: "localhost",
+      email: "sy7007723@gmail.com",
+      mobile: "7007723257",
       name: "Shivam Yadav",
+      resumeLink: "https://shivam-resume-2024.tiiny.site",
       introduction: {
         values:
           "A Full-Stack focused Wed Developer proficient in both frontend and backend languages and frameworks, as well as in server, network and hosting environments",
@@ -45,11 +49,12 @@ const myData: IMaster = {
           ESkills.HTML,
           ESkills.CSS,
           ESkills.STYLING,
+          ESkills.MATERIALUI,
           ESkills.JS,
           ESkills.TS,
           ESkills.REACT,
           ESkills.REACT_SIDEWAYS,
-          ESkills.VALIDATIONS,
+          ESkills.SAGA,
           ESkills.STORYBOOK,
           ESkills.SEO,
           ESkills.AWS,
@@ -99,7 +104,7 @@ const myData: IMaster = {
               ESkills.BE,
             ],
             hostedUrl: "",
-            imageUrl: "",
+            imageUrl: "https://i.ibb.co/Gncwp33/portfolio.png",
             pocUrl:
               "https://github.com/Shivamy2/Portfolio_FE|https://github.com/Shivamy2/Portfolio_BE",
             points: [
@@ -126,7 +131,7 @@ const myData: IMaster = {
                   [
                     ELiterals.LINK,
                     "here",
-                    "https://github.com/Shivamy2/Portfolio_FE|https://github.com/Shivamy2/Portfolio_BE",
+                    "https://github.com/Shivamy2/Portfolio_FE",
                   ],
                 ],
               },
@@ -149,19 +154,19 @@ const myData: IMaster = {
             stackUsed: [
               ESkills.HTML,
               ESkills.CSS,
+              ESkills.STYLING,
               ESkills.TS,
               ESkills.JS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
-              ESkills.VALIDATIONS,
+              ESkills.SAGA,
               ESkills.STORYBOOK,
               ESkills.DB_SQL,
-              ESkills.STYLING,
               ESkills.HOST,
               ESkills.SPRINGBOOT,
             ],
             hostedUrl: "",
-            imageUrl: "",
+            imageUrl: "https://i.ibb.co/6wXLkF9/trainica.jpg",
             pocUrl:
               "https://github.com/Shivamy2/training-management|https://github.com/Shivamy2/Training-management-backend",
             points: [
@@ -207,7 +212,7 @@ const myData: IMaster = {
               ESkills.HOST,
             ],
             hostedUrl: "",
-            imageUrl: "",
+            imageUrl: "https://i.ibb.co/rxNccMj/timebank.png",
             pocUrl: "https://github.com/DevRyth",
             points: [
               {
@@ -246,11 +251,10 @@ const myData: IMaster = {
             title: "AFLI: Ageas Federal Life Insurance",
             overview: {
               values:
-                "This is a client project which we started from $1. This is a $2 product which offers Insurance to the people who opt for home loans. \n $3",
+                "This is a client project which we started from $1. This is a $2 product which offers Insurance to the people who opt for home loans.",
               literals: [
                 [ELiterals.BOLD, "Scratch"],
                 [ELiterals.BOLD, "BANCA"],
-                [ELiterals.ITALIC, "I was a shadow resource here."],
               ],
             },
             shortDescription: {
@@ -263,15 +267,16 @@ const myData: IMaster = {
               ESkills.HTML,
               ESkills.CSS,
               ESkills.STYLING,
+              ESkills.MATERIALUI,
               ESkills.TS,
               ESkills.JS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
-              ESkills.VALIDATIONS,
               ESkills.DB_SQL,
             ],
-            hostedUrl: "https://creditlifeconnectuat.ageasfederal.com",
-            imageUrl: "",
+            hostedUrl: "https://creditlifeconnect.ageasfederal.com",
+            imageUrl:
+              "https://www.pngitem.com/pimgs/m/287-2876158_not-available-hd-png-download.png",
             pocUrl: "",
             longDescription: {
               values:
@@ -338,15 +343,16 @@ const myData: IMaster = {
               ESkills.HTML,
               ESkills.CSS,
               ESkills.STYLING,
+              ESkills.MATERIALUI,
               ESkills.TS,
               ESkills.JS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
-              ESkills.VALIDATIONS,
               ESkills.DB_NO_SQL,
             ],
             hostedUrl: "https://www.tataaig.com/",
-            imageUrl: "",
+            imageUrl:
+              "https://www.pngitem.com/pimgs/m/287-2876158_not-available-hd-png-download.png",
             pocUrl: "",
             longDescription: {
               values:
@@ -420,11 +426,12 @@ const myData: IMaster = {
               ESkills.HTML,
               ESkills.CSS,
               ESkills.STYLING,
+              ESkills.MATERIALUI,
               ESkills.JS,
               ESkills.TS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
-              ESkills.VALIDATIONS,
+              ESkills.SAGA,
               ESkills.AWS,
               ESkills.BE,
               ESkills.DB_NO_SQL,
@@ -463,7 +470,7 @@ const myData: IMaster = {
             employerName: "Devslane",
             employerLocation: "Ghaziabad",
             joiningDate: new Date("01/06/2021").toString(),
-            endingDate: new Date("31/10/2021").toString(),
+            endingDate: new Date("10/31/2021").toString(),
             position: "Software Developer Intern",
             techStackLearned: [
               ESkills.HTML,
@@ -473,7 +480,7 @@ const myData: IMaster = {
               ESkills.TS,
               ESkills.REACT,
               ESkills.REACT_SIDEWAYS,
-              ESkills.VALIDATIONS,
+              ESkills.SAGA,
               ESkills.AWS,
               ESkills.BE,
               ESkills.DB_NO_SQL,
@@ -545,7 +552,7 @@ const myData: IMaster = {
         secondaryDark: "#2B3467",
         secondaryLight: "#BAD7E9",
         onSecondary: "#000000",
-        hero: "https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg",
+        hero: "https://i.ibb.co/9shdXVB/hero.jpg",
       },
     },
   ],

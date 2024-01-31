@@ -100,7 +100,10 @@ export const typeDefs = `#graphql
 
     type EmployeeDetails {
         name: String
+        email: String
+        mobile: String
         introduction: Description
+        resumeLink: String
         dpUrl: String
         userCode: String
         home: Home
@@ -121,5 +124,11 @@ export const typeDefs = `#graphql
     type SkillProjects {
         personal: [ProjectDetails]
         professional: [ProjectDetails]
+    }
+
+    type SendChatResponse {
+        _id: String
+        employeeId: String
+        message: String
     }
 `;

@@ -11,7 +11,7 @@ export const queries = {
     payload: Record<string, any>
   ) => {
     const result = await Master.findByCode(payload.code);
-    console.log("Current Employee", result);
+    // console.log("Current Employee", result);
     return result;
   },
   getProjectsBySkill: async (_parent: any, payload: Record<string, any>) => {
